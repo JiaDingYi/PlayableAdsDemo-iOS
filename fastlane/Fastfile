@@ -27,8 +27,8 @@ platform :ios do
 
     # Build
     gym(
-      scheme: "PlayableAds-Example",
-      workspace: "Example/PlayableAds.xcworkspace",
+      scheme: "PlayableAdsDemo",
+      workspace: "Example/PlayableAdsDemo.xcworkspace",
       configuration: "Release",
       clean: true,
       include_bitcode: false,
@@ -40,10 +40,10 @@ platform :ios do
     appcenter_upload(
       api_token: "432d532f9c8d234a64d9ffc626d81ba5f9646dae",
       owner_name: "Atmosplay",
-      app_name: "PlayableAds-iOS",
-      ipa: "./PlayableAds_Example.ipa",
-      dsym: "./PlayableAds_Example.app.dSYM.zip",
-      release_notes: File.read("../RecoardLog/RELEASE.md"),
+      app_name: "PlayableAdsDemo-iOS",
+      ipa: "./PlayableAdsDemo.ipa",
+      dsym: "./PlayableAdsDemo.app.dSYM.zip",
+      release_notes: "",
       notify_testers: true # Set to false if you don't want to notify testers of your new release (default: `false`)
 	)
   end
