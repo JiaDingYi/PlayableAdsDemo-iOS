@@ -1,21 +1,21 @@
 PODS:
+  - AtmosplayAds (3.0.0)
   - Masonry (1.1.0)
-  - PlayableAds (2.6.0)
 
 DEPENDENCIES:
+  - AtmosplayAds (= 3.0.0)
   - Masonry
-  - PlayableAds
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Masonry
   https://github.com/yumimobi/Specs.git:
-    - PlayableAds
+    - AtmosplayAds
 
 SPEC CHECKSUMS:
+  AtmosplayAds: a63626b3ad6e3cbba4ad8fb1caf635ab4cb3029d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  PlayableAds: aa16a9538c8c95c1927fce3128f56966818d79ae
 
-PODFILE CHECKSUM: cab2b4ee8ff9c3f76abada6b2ebbda91a2b7533c
+PODFILE CHECKSUM: fe93eb80b1c05f51b97e9a041ab8c23304dadcd6
 
 COCOAPODS: 1.8.4
