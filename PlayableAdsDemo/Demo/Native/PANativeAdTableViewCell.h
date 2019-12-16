@@ -6,12 +6,12 @@
 //  Copyright © 2018年 on99. All rights reserved.
 //
 
-#import <PlayableAds/PANativeAdModel.h>
+#import <AtmosplayAds/AtmosplayNativeAdModel.h>
 #import <UIKit/UIKit.h>
 
 @interface PANativeAdTableViewCell : UITableViewCell
 
-- (void)setCellNativeData:(PANativeAdModel *)nativeAd;
+- (void)setCellNativeData:(AtmosplayNativeAdModel *)nativeAd;
 - (void)mediaPlay;
 - (void)mediaPause;
 

@@ -8,16 +8,17 @@
 
 #import "PAPlayableAdsViewController.h"
 #import "PADemoUtils.h"
-#import <PlayableAds/PlayableAds.h>
+#import <AtmosplayAds/AtmosplayInterstitial.h>
+#import <AtmosplayAds/AtmosplayRewardedVideo.h>
 
-@interface PAPlayableAdsViewController () <UITextFieldDelegate, PlayableAdsDelegate>
+@interface PAPlayableAdsViewController () <UITextFieldDelegate, AtmosplayInterstitialDelegate,AtmosplayRewardedVideoDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *appIdTextField;
 @property (weak, nonatomic) IBOutlet UITextField *adUnitTextField;
 @property (weak, nonatomic) IBOutlet UITextView *logTextView;
 
-@property (nonatomic) PlayableAds *playableAd;
-
+@property (nonatomic) AtmosplayInterstitial *interstitial;
+@property (nonatomic) AtmosplayRewardedVideo *rewardedVideo;
 @end
 
 @implementation PAPlayableAdsViewController
@@ -96,10 +97,17 @@
 
     [self saveValueToConfig];
 
-    self.playableAd = [[PlayableAds alloc] initWithAdUnitID:adUnitId appID:appId];
-    self.playableAd.delegate = self;
-    self.playableAd.autoLoad = [util autoLoadAd];
-    self.playableAd.channelId = [util channelID];
+    if (self.isVideo) {
+        self.rewardedVideo = [[AtmosplayRewardedVideo alloc] initWithAppID:appId AdUnitID:adUnitId];
+        self.rewardedVideo.delegate = self;
+        self.rewardedVideo.autoLoad = [util autoLoadAd];
+        self.rewardedVideo.channelId = [util channelID];
+    } else {
+        self.interstitial = [[AtmosplayInterstitial alloc] initWithAppID:appId AdUnitID:adUnitId];
+        self.interstitial.delegate = self;
+        self.interstitial.autoLoad = [util autoLoadAd];
+        self.interstitial.channelId = [util channelID];
+    }
 
     NSString *requestText = @"init playable ad ";
     if ([util autoLoadAd]) {
@@ -112,25 +120,32 @@
 }
 
 - (IBAction)requestAdAction:(UIButton *)sender {
-
-    if (!self.playableAd) {
+    if (!self.rewardedVideo || self.interstitial) {
         [self addLog:@"please init playable ad "];
         return;
     }
     [self addLog:@"load playable ad "];
-    [self.playableAd loadAd];
+    if (self.isVideo) {
+        [self.rewardedVideo loadAd];
+    } else {
+        [self.interstitial loadAd];
+    }
 }
 - (IBAction)presentAdAction:(UIButton *)sender {
-    if (!self.playableAd) {
+    if (!self.rewardedVideo || self.interstitial) {
         [self addLog:@"playableAd is nil"];
         return;
     }
 
-    if (!self.playableAd.isReady) {
+    if (!self.rewardedVideo.isReady || !self.interstitial.isReady) {
         [self addLog:@"playableAd is not ready"];
         return;
     }
-    [self.playableAd present];
+    if (self.isVideo) {
+        [self.rewardedVideo showRewardedVideoWithViewController:self];
+    } else {
+        [self.interstitial showInterstitialWithViewController:self];
+    }
 }
 
 #pragma mark - Text field delegate
@@ -143,38 +158,81 @@
     return YES;
 }
 
-#pragma mark : PlayableAdsDelegate
-- (void)playableAdsDidRewardUser:(PlayableAds *)ads {
-    [self addLog:@"playableAds did reward user"];
-}
+#pragma mark - AtmosplayInterstitialDelegate
 /// Tells the delegate that succeeded to load ad.
-- (void)playableAdsDidLoad:(PlayableAds *)ads {
-    [self addLog:@"playableAds did load"];
+- (void)atmosplayInterstitialDidLoad:(AtmosplayInterstitial *)ads {
+    [self addLog:@"atmosplayInterstitialDidLoad"];
 }
+
 /// Tells the delegate that failed to load ad.
-- (void)playableAds:(PlayableAds *)ads didFailToLoadWithError:(NSError *)error {
-    NSString *logText = [NSString stringWithFormat:@"playableAds did  load fail,error is==> %@", [error description]];
-    [self addLog:logText];
+- (void)atmosplayInterstitial:(AtmosplayInterstitial *)ads didFailToLoadWithError:(NSError *)error {
+    [self addLog:@"atmosplayDidFailToLoad"];
 }
+
 /// Tells the delegate that user starts playing the ad.
-- (void)playableAdsDidStartPlaying:(PlayableAds *)ads {
-    [self addLog:@"playableAds did  start playing"];
+- (void)atmosplayInterstitialDidStartPlaying:(AtmosplayInterstitial *)ads {
+    [self addLog:@"atmosplayInterstitialDidStartPlaying"];
 }
+
 /// Tells the delegate that the ad is being fully played.
-- (void)playableAdsDidEndPlaying:(PlayableAds *)ads {
-    [self addLog:@"playableAds did end playing"];
+- (void)atmosplayInterstitialDidEndPlaying:(AtmosplayInterstitial *)ads {
+    [self addLog:@"atmosplayInterstitialDidEndPlaying"];
 }
+
 /// Tells the delegate that the landing page did present on the screen.
-- (void)playableAdsDidPresentLandingPage:(PlayableAds *)ads {
-    [self addLog:@"playableAds did present landing page"];
+- (void)atmosplayInterstitialDidPresentLandingPage:(AtmosplayInterstitial *)ads {
+    [self addLog:@"atmosplayInterstitialDidPresentLandingPage"];
 }
+
 /// Tells the delegate that the ad did animate off the screen.
-- (void)playableAdsDidDismissScreen:(PlayableAds *)ads {
-    [self addLog:@"playableAds did dismiss screen"];
+- (void)atmosplayInterstitialDidDismissScreen:(AtmosplayInterstitial *)ads {
+    [self addLog:@"atmosplayInterstitialDidDismissScreen"];
 }
+
 /// Tells the delegate that the ad is clicked
-- (void)playableAdsDidClick:(PlayableAds *)ads {
-    [self addLog:@"playableAds did click"];
+- (void)atmosplayInterstitialDidClick:(AtmosplayInterstitial *)ads {
+    [self addLog:@"atmosplayInterstitialDidClick"];
+}
+
+#pragma mark - AtmosplayRewardedVideo
+/// Tells the delegate that the user should be rewarded.
+- (void)atmosplayRewardedVideoDidReceiveReward:(AtmosplayRewardedVideo *)ads {
+    [self addLog:@"atmosplayRewardedVideoDidReceiveReward"];
+}
+
+/// Tells the delegate that succeeded to load ad.
+- (void)atmosplayRewardedVideoDidLoad:(AtmosplayRewardedVideo *)ads {
+    [self addLog:@"atmosplayRewardedVideoDidLoad"];
+}
+
+/// Tells the delegate that failed to load ad.
+- (void)atmosplayRewardedVideo:(AtmosplayRewardedVideo *)ads didFailToLoadWithError:(NSError *)error {
+    [self addLog:@"atmosplayRewardedVideoDidFailToLoadWithError"];
+}
+
+/// Tells the delegate that user starts playing the ad.
+- (void)atmosplayRewardedVideoDidStartPlaying:(AtmosplayRewardedVideo *)ads {
+    [self addLog:@"atmosplayRewardedVideoDidStartPlaying"];
+}
+
+/// Tells the delegate that the ad is being fully played.
+- (void)atmosplayRewardedVideoDidEndPlaying:(AtmosplayRewardedVideo *)ads {
+    [self addLog:@"atmosplayRewardedVideoDidEndPlaying"];
+}
+
+/// Tells the delegate that the landing page did present on the screen.
+- (void)atmosplayRewardedVideoDidPresentLandingPage:(AtmosplayRewardedVideo *)ads {
+    [self addLog:@"atmosplayRewardedVideoDidPresentLandingPage"];
+}
+
+/// Tells the delegate that the ad did animate off the screen.
+- (void)atmosplayRewardedVideoDidDismissScreen:(AtmosplayRewardedVideo *)ads {
+    [self addLog:@"atmosplayRewardedVideoDidDismissScreen"];
+}
+
+/// Tells the delegate that the ad is clicked
+- (void)atmosplayRewardedVideoDidClick:(AtmosplayRewardedVideo *)ads {
+    [self addLog:@"atmosplayRewardedVideoDidClick"];
 }
 
 @end

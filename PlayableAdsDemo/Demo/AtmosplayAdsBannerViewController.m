@@ -7,11 +7,11 @@
 //
 
 #import "AtmosplayAdsBannerViewController.h"
-#import <PlayableAds/AtmosplayAdsBanner.h>
-#import <PlayableAds/PAUtils.h>
+#import <AtmosplayAds/AtmosplayBanner.h>
+#import <AtmosplayAds/PAUtils.h>
 
-@interface AtmosplayAdsBannerViewController () <AtmosplayAdsBannerDelegate>
-@property (nonatomic) AtmosplayAdsBanner *bannerView;
+@interface AtmosplayAdsBannerViewController () <AtmosplayBannerDelegate>
+@property (nonatomic) AtmosplayBanner *bannerView;
 @property (nonatomic) UITextField *appID;
 @property (nonatomic) UITextField *adUnitID;
 @property (nonatomic) UIButton *bannerSize1;
@@ -22,7 +22,7 @@
 @property (nonatomic) UIButton *bannerRequestBtn;
 @property (nonatomic) UIButton *bannerDestroyBtn;
 @property (nonatomic) UITextView *console;
-@property (nonatomic, assign) AtmosplayAdsBannerSize bannerSize;
+@property (nonatomic, assign) AtmosplayBannerSize bannerSize;
 
 @end
 
@@ -238,7 +238,7 @@
     }
 
     self.bannerView =
-        [[AtmosplayAdsBanner alloc] initWithAdUnitID:self.adUnitID.text appID:self.appID.text rootViewController:self];
+        [[AtmosplayBanner alloc] initWithAppID:self.appID.text adUnitID:self.adUnitID.text rootViewController:self];
     self.bannerView.delegate = self;
     self.bannerView.bannerSize = self.bannerSize;
     [self addLog:@"init banner"];
@@ -276,7 +276,7 @@
 
 #pragma mark - banner view delegate
 /// Tells the delegate that an ad has been successfully loaded.
-- (void)atmosplayAdsBannerViewDidLoad:(AtmosplayAdsBanner *)bannerView {
+- (void)atmosplayAdsBannerViewDidLoad:(AtmosplayBanner *)bannerView {
     [self addLog:@"atmosplayAdsBannerViewDidLoad"];
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -294,30 +294,30 @@
 }
 
 /// Tells the delegate that a request failed.
-- (void)atmosplayAdsBannerView:(AtmosplayAdsBanner *)bannerView didFailWithError:(NSError *)error {
+- (void)atmosplayAdsBannerView:(AtmosplayBanner *)bannerView didFailWithError:(NSError *)error {
     [self addLog:[NSString stringWithFormat:@"didFailWithError:%@", error.localizedDescription]];
 }
 
 /// Tells the delegate that the banner view has been clicked.
-- (void)atmosplayAdsBannerViewDidClick:(AtmosplayAdsBanner *)bannerView {
+- (void)atmosplayAdsBannerViewDidClick:(AtmosplayBanner *)bannerView {
     [self addLog:@"atmosplayAdsBannerViewDidClick"];
 }
 
 #pragma mark - banner size selecte
 - (void)selectBannerSize1 {
-    self.bannerSize = kAtmosplayAdsBanner320x50;
+    self.bannerSize = kAtmosplayBanner320x50;
 }
 
 - (void)selectBannerSize2 {
-    self.bannerSize = kAtmosplayAdsBanner728x90;
+    self.bannerSize = kAtmosplayBanner728x90;
 }
 
 - (void)selectBannerSize3 {
-    self.bannerSize = kAtmosplayAdsSmartBannerPortrait;
+    self.bannerSize = kAtmosplaySmartBannerPortrait;
 }
 
 - (void)selectBannerSize4 {
-    self.bannerSize = kAtmosplayAdsSmartBannerLandscape;
+    self.bannerSize = kAtmosplaySmartBannerLandscape;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

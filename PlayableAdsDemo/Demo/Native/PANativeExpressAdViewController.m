@@ -9,11 +9,11 @@
 #import "PANativeExpressAdViewController.h"
 #import "PADemoUtils.h"
 #import "PANativeExpressAdCell.h"
-#import <PlayableAds/PANativeExpressAd.h>
+#import <AtmosplayAds/AtmosplayNativeExpressAd.h>
 
 static NSString *expressId = @"ExpressViewCellID";
 
-@interface PANativeExpressAdViewController () <PANativeExpressAdDelegate>
+@interface PANativeExpressAdViewController () <AtmosplayNativeExpressAdDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *appIdTextField;
 @property (weak, nonatomic) IBOutlet UITextField *adUnitTextField;
@@ -21,7 +21,7 @@ static NSString *expressId = @"ExpressViewCellID";
 @property (weak, nonatomic) IBOutlet UITableView *nativeExpressAdTableView;
 
 @property (nonatomic) NSMutableArray *dataLists; // 偶数是广告
-@property (nonatomic) PANativeExpressAd *nativeExpressAd;
+@property (nonatomic) AtmosplayNativeExpressAd *nativeExpressAd;
 
 @end
 
@@ -76,7 +76,7 @@ static NSString *expressId = @"ExpressViewCellID";
     
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     self.nativeExpressAd =
-        [[PANativeExpressAd alloc] initWithAdUnitID:appUnit appID:appId adSize:CGSizeMake(width, 300)];
+        [[AtmosplayNativeExpressAd alloc] initWithAppID:appId adUnitID:appUnit adSize:CGSizeMake(width, 300)];
     self.nativeExpressAd.channelId = [[PADemoUtils shared] channelID];
     self.nativeExpressAd.delegate = self;
 }
@@ -119,7 +119,7 @@ static NSString *expressId = @"ExpressViewCellID";
 }
 
 /// Tells the delegate that an ad has been successfully loaded.
-- (void)playableNativeExpressAdDidLoad:(PANativeExpressAdView *)nativeExpressAd {
+- (void)atmosplayNativeExpressAdDidLoad:(PANativeExpressAdView *)nativeExpressAd {
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf.dataLists addObject:nativeExpressAd];
@@ -132,14 +132,15 @@ static NSString *expressId = @"ExpressViewCellID";
 }
 
 /// Tells the delegate that a request failed.
-- (void)playableNativeExpressAdDidFailWithError:(NSError *)error {
+- (void)atmosplayNativeExpressAdDidFailWithError:(NSError *)error {
     [self addLog:@"native ad load fail"];
 }
 
 /// Tells the delegate that the Native view has been clicked.
-- (void)playableNativeExpressAdDidClick:(PANativeExpressAdView *)nativeExpressAd {
+- (void)atmosplayNativeExpressAdDidClick:(PANativeExpressAdView *)nativeExpressAd {
     [self addLog:@"native ad load click"];
 }
+
 #pragma mark : UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];

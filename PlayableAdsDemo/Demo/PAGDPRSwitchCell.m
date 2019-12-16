@@ -7,7 +7,7 @@
 //
 
 #import "PAGDPRSwitchCell.h"
-#import <PlayableAds/PlayableAdsGDPR.h>
+#import <AtmosplayAds/PlayableAdsGDPR.h>
 
 @interface PAGDPRSwitchCell ()
 
