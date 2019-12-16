@@ -7,7 +7,7 @@ target 'PlayableAdsDemo' do
   # use_frameworks!
 
   # Pods for PlayableAdsDemo
-  pod 'AtmospalyAds', '3.0.0'
+  pod 'AtmosplayAds', '3.0.0'
   pod 'Masonry'
    
   target 'PlayableAdsDemoTests' do
