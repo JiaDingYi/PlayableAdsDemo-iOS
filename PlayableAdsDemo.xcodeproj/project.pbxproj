@@ -625,12 +625,16 @@
 			baseConfigurationReference = 136CA88829B5A679859D6775 /* Pods-PlayableAdsDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5QP2NLJB42;
+				DEVELOPMENT_TEAM = QX37QM2334;
 				INFOPLIST_FILE = PlayableAdsDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zplay.PlayableAdsDemoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atmosplay.PlayableAdsDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlayableAdsDemo.app/PlayableAdsDemo";
 			};
@@ -641,12 +645,16 @@
 			baseConfigurationReference = F8B0025C7264694452126BE0 /* Pods-PlayableAdsDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5QP2NLJB42;
+				DEVELOPMENT_TEAM = QX37QM2334;
 				INFOPLIST_FILE = PlayableAdsDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zplay.PlayableAdsDemoTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.atmosplay.PlayableAdsDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlayableAdsDemo.app/PlayableAdsDemo";
 			};
