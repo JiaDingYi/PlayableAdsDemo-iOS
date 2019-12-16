@@ -9,6 +9,7 @@ target 'PlayableAdsDemo' do
   # Pods for PlayableAdsDemo
   pod 'AtmosplayAds', '3.0.0'
   pod 'Masonry'
+  pod 'AppCenter'
    
   target 'PlayableAdsDemoTests' do
     inherit! :search_paths
