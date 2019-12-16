@@ -9,17 +9,17 @@
 #import <Foundation/Foundation.h>
 
 typedef enum : NSUInteger {
-    kZplayAdsType_interstitial = 1 << 1,
-    kZplayAdsType_native,
-    kZplayAdsType_nativeExpress,
-    kZplayAdsType_video,
-} kZplayAdsType;
+    kAtmosplayAdsType_interstitial = 1 << 1,
+    kAtmosplayAdsType_native,
+    kAtmosplayAdsType_nativeExpress,
+    kAtmosplayAdsType_video,
+} kAtmosplayAdsType;
 
 @interface PAAdConfigInfo : NSObject
 
 @property (nonatomic) NSString *appId;
 @property (nonatomic) NSString *placementId;
-@property (nonatomic) kZplayAdsType adType;
+@property (nonatomic) kAtmosplayAdsType adType;
 
 @end
 
@@ -41,6 +41,6 @@ typedef enum : NSUInteger {
 - (NSString *)channelID;
 
 - (void)saveAdInfo:(PAAdConfigInfo *)adConfig;
-- (PAAdConfigInfo *)getAdInfo:(kZplayAdsType)adType;
+- (PAAdConfigInfo *)getAdInfo:(kAtmosplayAdsType)adType;
 
 @end

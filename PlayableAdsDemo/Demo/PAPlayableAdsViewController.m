@@ -39,7 +39,7 @@
 
 - (void)setVauleToTextField {
 
-    kZplayAdsType adType = self.isVideo ? kZplayAdsType_video : kZplayAdsType_interstitial;
+    kAtmosplayAdsType adType = self.isVideo ? kAtmosplayAdsType_video : kAtmosplayAdsType_interstitial;
     PAAdConfigInfo *adConfig = [[PADemoUtils shared] getAdInfo:adType];
     if (!adConfig) {
         [self saveValueToConfig];
@@ -52,7 +52,7 @@
 
 - (void)saveValueToConfig {
     PAAdConfigInfo *adConfig = [[PAAdConfigInfo alloc] init];
-    adConfig.adType = self.isVideo ? kZplayAdsType_video : kZplayAdsType_interstitial;
+    adConfig.adType = self.isVideo ? kAtmosplayAdsType_video : kAtmosplayAdsType_interstitial;
     ;
     adConfig.appId = self.appIdTextField.text;
     adConfig.placementId = self.adUnitTextField.text;

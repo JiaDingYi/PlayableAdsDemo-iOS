@@ -116,13 +116,13 @@
     NSString *key = [self generateAdkey:adConfig.adType];
     [self.allAdInfo setValue:adConfig forKey:key];
 }
-- (PAAdConfigInfo *)getAdInfo:(kZplayAdsType)adType {
+- (PAAdConfigInfo *)getAdInfo:(kAtmosplayAdsType)adType {
     NSString *key = [self generateAdkey:adType];
 
     return self.allAdInfo[key];
 }
 
-- (NSString *)generateAdkey:(kZplayAdsType)adType {
+- (NSString *)generateAdkey:(kAtmosplayAdsType)adType {
 
     return [NSString stringWithFormat:@"adType_%lu", (unsigned long)adType];
 }
