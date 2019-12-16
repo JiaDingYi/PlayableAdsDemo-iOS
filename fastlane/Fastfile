@@ -28,7 +28,7 @@ platform :ios do
     # Build
     gym(
       scheme: "PlayableAdsDemo",
-      workspace: "Example/PlayableAdsDemo.xcworkspace",
+      workspace: "./PlayableAdsDemo.xcworkspace",
       configuration: "Release",
       clean: true,
       include_bitcode: false,
@@ -40,7 +40,7 @@ platform :ios do
     appcenter_upload(
       api_token: "432d532f9c8d234a64d9ffc626d81ba5f9646dae",
       owner_name: "Atmosplay",
-      app_name: "PlayableAdsDemo-iOS",
+      app_name: "AtmosplayAdsDemo-iOS",
       ipa: "./PlayableAdsDemo.ipa",
       dsym: "./PlayableAdsDemo.app.dSYM.zip",
       release_notes: "",
