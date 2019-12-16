@@ -1,21 +1,32 @@
 PODS:
+  - AppCenter (2.5.3):
+    - AppCenter/Analytics (= 2.5.3)
+    - AppCenter/Crashes (= 2.5.3)
+  - AppCenter/Analytics (2.5.3):
+    - AppCenter/Core
+  - AppCenter/Core (2.5.3)
+  - AppCenter/Crashes (2.5.3):
+    - AppCenter/Core
   - AtmosplayAds (3.0.0)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
+  - AppCenter
   - AtmosplayAds (= 3.0.0)
   - Masonry
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - AppCenter
     - Masonry
   https://github.com/yumimobi/Specs.git:
     - AtmosplayAds
 
 SPEC CHECKSUMS:
+  AppCenter: 765ff38c4d360fc5ec61b61a8be24d74cd6d4d83
   AtmosplayAds: a63626b3ad6e3cbba4ad8fb1caf635ab4cb3029d
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: fe93eb80b1c05f51b97e9a041ab8c23304dadcd6
+PODFILE CHECKSUM: 6c81f43efd58fef9eff974df009c6d1bc6a99c9d
 
 COCOAPODS: 1.8.4
