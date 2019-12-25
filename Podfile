@@ -1,5 +1,4 @@
 source 'https://github.com/CocoaPods/Specs.git'
-source 'https://github.com/yumimobi/Specs.git'
 platform :ios, '9.0'
 
 target 'PlayableAdsDemo' do
@@ -7,7 +6,7 @@ target 'PlayableAdsDemo' do
   # use_frameworks!
 
   # Pods for PlayableAdsDemo
-  pod 'AtmosplayAds', '3.0.0'
+  # pod 'AtmosplayAds', '3.0.0'
   pod 'Masonry'
   pod 'AppCenter'
    
