@@ -98,12 +98,12 @@
     [self saveValueToConfig];
 
     if (self.isVideo) {
-        self.rewardedVideo = [[AtmosplayRewardedVideo alloc] initWithAppID:appId AdUnitID:adUnitId];
+        self.rewardedVideo = [[AtmosplayRewardedVideo alloc] initWithAppID:appId adUnitID:adUnitId];
         self.rewardedVideo.delegate = self;
         self.rewardedVideo.autoLoad = [util autoLoadAd];
         self.rewardedVideo.channelId = [util channelID];
     } else {
-        self.interstitial = [[AtmosplayInterstitial alloc] initWithAppID:appId AdUnitID:adUnitId];
+        self.interstitial = [[AtmosplayInterstitial alloc] initWithAppID:appId adUnitID:adUnitId];
         self.interstitial.delegate = self;
         self.interstitial.autoLoad = [util autoLoadAd];
         self.interstitial.channelId = [util channelID];
