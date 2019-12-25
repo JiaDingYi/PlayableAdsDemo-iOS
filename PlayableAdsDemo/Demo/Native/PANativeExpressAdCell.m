@@ -7,7 +7,7 @@
 //
 
 #import "PANativeExpressAdCell.h"
-#import <PlayableAds/PANativeExpressAd.h>
+#import <AtmosplayAds/AtmosplayNativeExpressAd.h>
 #import <Masonry/Masonry.h>
 
 @interface PANativeExpressAdCell ()

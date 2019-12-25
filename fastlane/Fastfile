@@ -1,0 +1,50 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Description of what the lane does"
+  lane :custom_lane do
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+
+	desc "Submit a new Beta Build to App Center"
+	lane :pushToAppCenter do
+	xcversion(version: "11.1")
+
+    # Build
+    gym(
+      scheme: "PlayableAdsDemo",
+      workspace: "./PlayableAdsDemo.xcworkspace",
+      configuration: "Release",
+      clean: true,
+      include_bitcode: false,
+      include_symbols: true,
+      export_method: "enterprise",
+    )
+
+    # push to App Center
+    appcenter_upload(
+      api_token: "432d532f9c8d234a64d9ffc626d81ba5f9646dae",
+      owner_name: "Atmosplay",
+      app_name: "AtmosplayAdsDemo-iOS",
+      ipa: "./PlayableAdsDemo.ipa",
+      dsym: "./PlayableAdsDemo.app.dSYM.zip",
+      release_notes: "",
+      notify_testers: true # Set to false if you don't want to notify testers of your new release (default: `false`)
+	)
+  end
+end

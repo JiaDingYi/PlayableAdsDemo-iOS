@@ -8,6 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum : NSUInteger {
+    kAtmosplayAdsType_interstitial = 1 << 1,
+    kAtmosplayAdsType_native,
+    kAtmosplayAdsType_nativeExpress,
+    kAtmosplayAdsType_video,
+} kAtmosplayAdsType;
+
+@interface PAAdConfigInfo : NSObject
+
+@property (nonatomic) NSString *appId;
+@property (nonatomic) NSString *placementId;
+@property (nonatomic) kAtmosplayAdsType adType;
+
+@end
+
 @interface PADemoUtils : NSObject
 
 + (instancetype)shared;
@@ -24,5 +39,8 @@
 // channelID
 - (void)setChannelID:(NSString *)channelID;
 - (NSString *)channelID;
+
+- (void)saveAdInfo:(PAAdConfigInfo *)adConfig;
+- (PAAdConfigInfo *)getAdInfo:(kAtmosplayAdsType)adType;
 
 @end

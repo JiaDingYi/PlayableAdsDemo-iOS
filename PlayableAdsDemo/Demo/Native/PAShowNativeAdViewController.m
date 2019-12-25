@@ -9,11 +9,11 @@
 #import "PAShowNativeAdViewController.h"
 #import "PADemoUtils.h"
 #import "PANativeAdTableViewCell.h"
-#import <PlayableAds/PANativeAd.h>
+#import <AtmosplayAds/AtmosplayNative.h>
 
 static NSString *cellID = @"PANativeAdCellID";
 
-@interface PAShowNativeAdViewController () <PANativeAdDelegate>
+@interface PAShowNativeAdViewController () <AtmosplayNativeDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *appIdTextField;
 @property (weak, nonatomic) IBOutlet UITextField *adUnitTextField;
@@ -21,8 +21,7 @@ static NSString *cellID = @"PANativeAdCellID";
 @property (weak, nonatomic) IBOutlet UITableView *nativeAdTableView;
 
 @property (nonatomic) NSMutableArray *dataLists; // 偶数是广告
-@property (nonatomic) PANativeAd *nativeAd;
-
+@property (nonatomic) AtmosplayNative *nativeAd;
 @end
 
 @implementation PAShowNativeAdViewController
@@ -79,7 +78,7 @@ static NSString *cellID = @"PANativeAdCellID";
     }
     [self addLog:requestText];
     
-    self.nativeAd = [[PANativeAd alloc] initWithAdUnitID:appUnit appID:appId];
+    self.nativeAd = [[AtmosplayNative alloc] initWithAppID:appId adUnitID:appUnit ];
     self.nativeAd.channelId = [[PADemoUtils shared] channelID];
     self.nativeAd.delegate = self;
 }
@@ -104,7 +103,7 @@ static NSString *cellID = @"PANativeAdCellID";
 
     id model = self.dataLists[indexPath.row];
 
-    if ([model isKindOfClass:[PANativeAdModel class]]) {
+    if ([model isKindOfClass:[AtmosplayNativeAdModel class]]) {
 
         PANativeAdTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
         if (!cell) {
@@ -136,8 +135,8 @@ static NSString *cellID = @"PANativeAdCellID";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
     id model = self.dataLists[indexPath.row];
-    if ([model isKindOfClass:[PANativeAdModel class]]) {
-        CGFloat height = screenWidth / ((PANativeAdModel *)model).ratios;
+    if ([model isKindOfClass:[AtmosplayNativeAdModel class]]) {
+        CGFloat height = screenWidth / ((AtmosplayNativeAdModel *)model).ratios;
 
         return height + 60;
     }
@@ -178,9 +177,8 @@ static NSString *cellID = @"PANativeAdCellID";
 }
 
 #pragma mark : PANativeAdDelegate
-
 /// Tells the delegate that an ad has been successfully loaded.
-- (void)playableNativeAdDidLoad:(PANativeAdModel *)nativeAd {
+- (void)atmosplayNativeAdDidLoad:(AtmosplayNativeAdModel *)nativeAd {
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [weakSelf.dataLists addObject:nativeAd];
@@ -197,12 +195,12 @@ static NSString *cellID = @"PANativeAdCellID";
 }
 
 /// Tells the delegate that a request failed.
-- (void)playableNativeAdDidFailWithError:(NSError *)error {
+- (void)atmosplayNativeAdDidFailWithError:(NSError *)error {
     [self addLog:@"native ad load fail"];
 }
 
 /// Tells the delegate that the Native view has been clicked.
-- (void)playableNativeAdDidClick:(PANativeAdModel *)nativeAd {
+- (void)atmosplayNativeAdDidClick:(AtmosplayNativeAdModel *)nativeAd {
     [self addLog:@"native ad did click"];
 }
 

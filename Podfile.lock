@@ -1,20 +1,31 @@
 PODS:
+  - AppCenter (2.5.3):
+    - AppCenter/Analytics (= 2.5.3)
+    - AppCenter/Crashes (= 2.5.3)
+  - AppCenter/Analytics (2.5.3):
+    - AppCenter/Core
+  - AppCenter/Core (2.5.3)
+  - AppCenter/Crashes (2.5.3):
+    - AppCenter/Core
+  - AtmosplayAds (3.0.0)
   - Masonry (1.1.0)
-  - PlayableAds (2.4.3)
 
 DEPENDENCIES:
+  - AppCenter
+  - AtmosplayAds (= 3.0.0)
   - Masonry
-  - PlayableAds
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
+    - AppCenter
+    - AtmosplayAds
     - Masonry
-    - PlayableAds
 
 SPEC CHECKSUMS:
+  AppCenter: 765ff38c4d360fc5ec61b61a8be24d74cd6d4d83
+  AtmosplayAds: 1391ac3062e39045b98a82e0ff7fb2b6b7841956
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  PlayableAds: 19788ba6d0b208d4711660216b2426607adc1948
 
-PODFILE CHECKSUM: 460c6e79f461f731b79390cc1707c7e518fcd538
+PODFILE CHECKSUM: 6d1183e159e7b2e13e0c41f73c5395d0bf752744
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.8.4

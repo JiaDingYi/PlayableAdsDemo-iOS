@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *desLab;
 @property (weak, nonatomic) IBOutlet UIImageView *coverImgView;
 
-@property (nonatomic) PANativeAdModel *nativeAd;
+@property (nonatomic) AtmosplayNativeAdModel *nativeAd;
 
 @end
 
@@ -33,7 +33,7 @@
     self.titleLab.adjustsFontSizeToFitWidth = YES;
 }
 
-- (void)setCellNativeData:(PANativeAdModel *)nativeAd {
+- (void)setCellNativeData:(AtmosplayNativeAdModel *)nativeAd {
 
     self.coverImgView.image = nil;
     if (self.nativeAd.mediaView) {
