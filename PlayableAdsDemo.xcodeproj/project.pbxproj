@@ -27,14 +27,14 @@
 		5B96871A236C09A400A47ADE /* PARootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B968703236C09A300A47ADE /* PARootViewController.m */; };
 		5B96871B236C09A400A47ADE /* PAChannelIDCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B968705236C09A300A47ADE /* PAChannelIDCell.m */; };
 		5B96871C236C09A400A47ADE /* PADemoUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B968707236C09A300A47ADE /* PADemoUtils.m */; };
-		C22F70F98D6FB5E7A30385B2 /* libPods-PlayableAdsDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0799E3856B1D58ABA234580 /* libPods-PlayableAdsDemo.a */; };
+		AEB5BEF57D42180192B115DD /* Pods_PlayableAdsDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8092A57D989B719B59A183 /* Pods_PlayableAdsDemo.framework */; };
 		C758B4DC1FAFFBC8009CE8E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C758B4DB1FAFFBC8009CE8E9 /* AppDelegate.m */; };
 		C758B4E21FAFFBC8009CE8E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C758B4E01FAFFBC8009CE8E9 /* Main.storyboard */; };
 		C758B4E41FAFFBC8009CE8E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C758B4E31FAFFBC8009CE8E9 /* Assets.xcassets */; };
 		C758B4E71FAFFBC8009CE8E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C758B4E51FAFFBC8009CE8E9 /* LaunchScreen.storyboard */; };
 		C758B4EA1FAFFBC8009CE8E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C758B4E91FAFFBC8009CE8E9 /* main.m */; };
 		C758B4F41FAFFBC9009CE8E9 /* PlayableAdsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C758B4F31FAFFBC9009CE8E9 /* PlayableAdsDemoTests.m */; };
-		D4B8A4E372DF146806E7D446 /* libPods-PlayableAdsDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40507A429AD336F95C03F2B5 /* libPods-PlayableAdsDemoTests.a */; };
+		E741D23BB6326796CC6F4C83 /* Pods_PlayableAdsDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAEEC830151AD1FA38699AFE /* Pods_PlayableAdsDemoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,6 @@
 /* Begin PBXFileReference section */
 		09CF04BC11D43444CFDEB811 /* Pods-PlayableAdsDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayableAdsDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayableAdsDemo/Pods-PlayableAdsDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		136CA88829B5A679859D6775 /* Pods-PlayableAdsDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayableAdsDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlayableAdsDemoTests/Pods-PlayableAdsDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
-		40507A429AD336F95C03F2B5 /* libPods-PlayableAdsDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayableAdsDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B9686E3236C09A300A47ADE /* PAStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAStatisticsViewController.m; sourceTree = "<group>"; };
 		5B9686E4236C09A300A47ADE /* PAStatisticsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PAStatisticsCell.xib; sourceTree = "<group>"; };
 		5B9686E5236C09A300A47ADE /* PAStatisticsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAStatisticsCell.m; sourceTree = "<group>"; };
@@ -89,7 +88,6 @@
 		5B968707236C09A300A47ADE /* PADemoUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PADemoUtils.m; sourceTree = "<group>"; };
 		5B968708236C09A300A47ADE /* PAPlayableAdsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAPlayableAdsViewController.h; sourceTree = "<group>"; };
 		70511BFC20E9C25FCA44C77C /* Pods-PlayableAdsDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayableAdsDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlayableAdsDemo/Pods-PlayableAdsDemo.release.xcconfig"; sourceTree = "<group>"; };
-		C0799E3856B1D58ABA234580 /* libPods-PlayableAdsDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlayableAdsDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C758B4D71FAFFBC8009CE8E9 /* PlayableAdsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayableAdsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C758B4DA1FAFFBC8009CE8E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C758B4DB1FAFFBC8009CE8E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,6 +99,8 @@
 		C758B4EF1FAFFBC8009CE8E9 /* PlayableAdsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayableAdsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C758B4F31FAFFBC9009CE8E9 /* PlayableAdsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayableAdsDemoTests.m; sourceTree = "<group>"; };
 		C758B4F51FAFFBC9009CE8E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAEEC830151AD1FA38699AFE /* Pods_PlayableAdsDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayableAdsDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8092A57D989B719B59A183 /* Pods_PlayableAdsDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlayableAdsDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B0025C7264694452126BE0 /* Pods-PlayableAdsDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlayableAdsDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlayableAdsDemoTests/Pods-PlayableAdsDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C22F70F98D6FB5E7A30385B2 /* libPods-PlayableAdsDemo.a in Frameworks */,
+				AEB5BEF57D42180192B115DD /* Pods_PlayableAdsDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4B8A4E372DF146806E7D446 /* libPods-PlayableAdsDemoTests.a in Frameworks */,
+				E741D23BB6326796CC6F4C83 /* Pods_PlayableAdsDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,8 +231,8 @@
 		D2FABF73D8A5531632ED6644 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C0799E3856B1D58ABA234580 /* libPods-PlayableAdsDemo.a */,
-				40507A429AD336F95C03F2B5 /* libPods-PlayableAdsDemoTests.a */,
+				ED8092A57D989B719B59A183 /* Pods_PlayableAdsDemo.framework */,
+				DAEEC830151AD1FA38699AFE /* Pods_PlayableAdsDemoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -259,7 +259,8 @@
 				C758B4D31FAFFBC8009CE8E9 /* Sources */,
 				C758B4D41FAFFBC8009CE8E9 /* Frameworks */,
 				C758B4D51FAFFBC8009CE8E9 /* Resources */,
-				468C29BAB66323DC9AA23A43 /* [CP] Copy Pods Resources */,
+				8161CBE90C0783AB3D5A1376 /* [CP] Embed Pods Frameworks */,
+				7A1B874CE10789D474F08CC5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -352,7 +353,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		468C29BAB66323DC9AA23A43 /* [CP] Copy Pods Resources */ = {
+		7A1B874CE10789D474F08CC5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,6 +369,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlayableAdsDemo/Pods-PlayableAdsDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8161CBE90C0783AB3D5A1376 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlayableAdsDemo/Pods-PlayableAdsDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlayableAdsDemo/Pods-PlayableAdsDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A368ED822D5820E4C2F685CA /* [CP] Check Pods Manifest.lock */ = {
