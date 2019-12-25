@@ -18,15 +18,14 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AppCenter
-    - Masonry
-  https://github.com/yumimobi/Specs.git:
     - AtmosplayAds
+    - Masonry
 
 SPEC CHECKSUMS:
   AppCenter: 765ff38c4d360fc5ec61b61a8be24d74cd6d4d83
-  AtmosplayAds: a63626b3ad6e3cbba4ad8fb1caf635ab4cb3029d
+  AtmosplayAds: 1391ac3062e39045b98a82e0ff7fb2b6b7841956
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 6c81f43efd58fef9eff974df009c6d1bc6a99c9d
+PODFILE CHECKSUM: 6d1183e159e7b2e13e0c41f73c5395d0bf752744
 
 COCOAPODS: 1.8.4
