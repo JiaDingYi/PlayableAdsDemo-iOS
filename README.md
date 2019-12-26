@@ -9,7 +9,7 @@
 # 前提条件
 
 - 使用 Xcode 10.0 或更高版本。
-- 使用 iOS 9.0 或更高版本。
+- 使用 iOS 8.0 或更高版本。
 - 创建 Atmosplay Ads App ID 和 AdUnitID, 请阅读[开发者帮助文档](https://github.com/Atmosplay/Help-Center-for-Publisher/blob/master/guides.md)。
 
 # 导入移动广告 SDK
