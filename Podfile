@@ -3,7 +3,7 @@ platform :ios, '9.0'
 
 target 'PlayableAdsDemo' do
   use_frameworks!
-  pod 'AtmosplayAds', '3.0.0'
+  pod 'AtmosplayAds'
   pod 'Masonry'
   pod 'AppCenter'
    
