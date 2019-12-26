@@ -7,12 +7,12 @@ PODS:
   - AppCenter/Core (2.5.3)
   - AppCenter/Crashes (2.5.3):
     - AppCenter/Core
-  - AtmosplayAds (3.0.0)
+  - AtmosplayAds (3.0.1)
   - Masonry (1.1.0)
 
 DEPENDENCIES:
   - AppCenter
-  - AtmosplayAds (= 3.0.0)
+  - AtmosplayAds
   - Masonry
 
 SPEC REPOS:
@@ -23,9 +23,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AppCenter: 765ff38c4d360fc5ec61b61a8be24d74cd6d4d83
-  AtmosplayAds: 1391ac3062e39045b98a82e0ff7fb2b6b7841956
+  AtmosplayAds: 53c615a931c2b5d7df046adbb137172b88dcbc37
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 6d1183e159e7b2e13e0c41f73c5395d0bf752744
+PODFILE CHECKSUM: 678fdb3495f18dbc0169eb6b7f720c2a5594992e
 
 COCOAPODS: 1.8.4
