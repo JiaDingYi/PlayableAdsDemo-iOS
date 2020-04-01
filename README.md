@@ -387,6 +387,104 @@ self.nativeAd.delegate = self;
 }
 ```
 
+## 浮标广告
+### 初始化及请求
+
+```objective-c
+  @interface AtmosplayFloatAdViewController () <AtmosplayFloatAdDelegate>
+  @property (nonatomic) AtmosplayFloatAd *floatAd;
+  @end
+
+  @implementation AtmosplayFloatAdViewController
+  // 初始化及请求浮标广告
+  // AppID：平台申请的应用ID
+  // adUnitID：平台申请的广告位ID
+  // autoLoad: 是否自动加载下一条广告
+  self.floatAd = [[AtmosplayFloatAd alloc] initAndLoadAdWithAppID:@"Your_App_ID"
+                                                         adUnitID:@"Your_AdUniit_ID"
+                                                         autoLoad:YES];
+  self.floatAd.delegate = self;
+  @end
+```
+
+### 展示浮标广告
+```objective-c
+  // 展示浮标广告
+  // point：浮标原点坐标
+  // width：浮标宽度。高度由对应比例计算，无需设置。
+  // rootViewController：展示浮标广告的控制器
+
+  float x = 10.0;
+  float y = 10.0;
+  float width = 150;
+  if (self.floatAd.isReady) {
+    [self.floatAd showFloatAdWith:CGPointMake(x,y) width:width rootViewController:self];
+  }
+```
+
+### 更新浮标广告位置
+```objective-c
+  // 重设浮标广告位置
+  // point：浮标原点坐标
+  // width：浮标宽度。高度由对应比例计算，无需设置。
+  // rootViewController：展示浮标广告的控制器
+
+  float x = [self.xTextField.text floatValue];
+  float y = [self.yTextField.text floatValue];
+  float width = [self.widthTextField.text floatValue];
+    
+  [self.floatAd resetFloatAdFrameWith:CGPointMake(x, y) width:width rootViewController:self];
+```
+
+### 其他方法
+```objective-c
+  // 隐藏浮标广告
+  - (void)hiddenFloatAd;
+  
+  // 隐藏之后再次展示浮标广告
+  - (void)showAgainAfterHiding;
+  
+  // 销毁浮标广告
+  - (void)destroyFloatAd;
+```
+
+### 实现浮标广告代理方法
+```objective-c
+/// Tells the delegate that an ad has been successfully loaded.
+- (void)atmosplayFloatAdDidLoad:(AtmosplayFloatAd *)floatAd {
+    [self addLog:@"atmosplayFloatAdDidLoad"];
+}
+/// Tells the delegate that a request failed.
+- (void)atmosplayFloatAd:(AtmosplayFloatAd *)floatAd DidFailWithError:(NSError *)error {
+    NSString *errorString = [[NSString alloc] initWithFormat:@"DidFailWithError %@",error.description];
+    [self addLog:errorString];
+}
+/// Tells the delegate that the user should be rewarded.
+- (void)atmosplayFloatAdDidRewardUser:(AtmosplayFloatAd *)floatAd {
+    [self addLog:@"atmosplayFloatAdDidRewardUser"];
+}
+/// Tells the delegate that user starts playing the ad.
+- (void)atmosplayFloatAdDidStartPlaying:(AtmosplayFloatAd *)floatAd {
+    [self addLog:@"atmosplayFloatAdDidStartPlaying"];
+}
+/// Tells the delegate that the ad is being fully played.
+- (void)atmosplayFloatAdDidEndPlaying:(AtmosplayFloatAd *)floatAd {
+    [self addLog:@"atmosplayFloatAdDidEndPlaying"];
+}
+/// Tells the delegate that the landing page did present on the screen.
+- (void)atmosplayFloatAdDidPresentLandingPage:(AtmosplayFloatAd *)floatAd {
+    [self addLog:@"atmosplayFloatAdDidPresentLandingPage"];
+}
+/// Tells the delegate that the ad did animate off the screen.
+- (void)atmosplayFloatAdDidDismissScreen:(AtmosplayFloatAd *)floatAd {
+    [self addLog:@"atmosplayFloatAdDidDismissScreen"];
+}
+/// Tells the delegate that the ad is clicked
+- (void)atmosplayFloatAdDidClick:(AtmosplayFloatAd *)floatAd {
+    [self addLog:@"atmosplayFloatAdDidClick"];
+}
+```
+
 ## Tools and Debugging
 ### GDPR
 
